@@ -19,9 +19,23 @@
 
         body {
             background-color: #0f172a;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
+            color: #e2e8f0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+        
+        h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #f8fafc;
         }
 
         /* ---------- NAVBAR ---------- */
@@ -121,11 +135,12 @@
         /* ---------- SECTION GENERAL ---------- */
 
         section {
-            padding: 100px 10%;
+            padding: 0px 10%;
         }
 
         section h3 {
             font-size: 40px;
+            margin-top: 40px;
             margin-bottom: 40px;
             color: orange;
         }
@@ -264,10 +279,11 @@
 
     <nav>
 
-        <h1>- Tamim -</h1>
+        <h1>Tamim Saleem</h1>
 
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#about">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#honors">Honors</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -311,36 +327,61 @@
     <section id="about">
 
         <h3>About Me</h3>
+        <div class="honors-list">
+          
+            <div class="honor-item">
+                    <h4>
+                      I am a high school senior with
+                      various interests, aspiring
+                      to become an engineer.
+                      Some of my skills include
+                      physics simulations, robotics,
+                      engineering design, programming,
+                      mathematical problem solving,
+                      and scientific research. I hope
+                      to expand on these skills in the
+                      coming years!
+                    </h4>
+            </div>           
+        </div>
 
         <div class="about-container">
 
-            <div class="about-box">
-
-                <h4>Education</h4>
-
-                <p>
-                    Placeholder
-                </p>
-
-            </div>
-
-            <div class="about-box">
-
-                <h4>Interests</h4>
-
-                <p>
-                    Physics simulations, robotics,
-                    engineering design, programming,
-                    mathematical problem solving,
-                    and scientific research.
-                </p>
-
-            </div>
-
-        </div>
-
     </section>
 
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <h3>Education</h3>
+
+        <div class="honors-list">
+
+            <div class="honor-item">
+                <h2><u>High School - West Shore Junior/Senior High School</u></h2>
+                <h4>Coursework</h4>
+                    <p>
+                        AP Calculus BC, AP Physics C: Mechanics, AP Chemistry, 
+                        AP Seminar, AP English Language, AP Science Research, 
+                        AP Computer Science A, AP Physics 2
+                    </p>
+                <br>
+                <h4>Highlights</h4>
+                    <p>Class Rank: 1/138 (Valedictorian)</p>
+                    <p>Weighted GPA: 4.6</p>
+                    <p>ACT Score: Perfect 36</p> <br>
+                <h2><u>Dual Enrollment - Florida Institute of Technology</u></h2>
+                <h4>Coursework</h4>
+                    <p>
+                        Calculus III, Introduction to C++, 
+                        Differential Equations/Linear Algebra, 
+                        Applied Discrete Mathematics
+                    </p>
+                <br>
+                </div>           
+            </div>
+        </section>
+    
     <!-- PROJECTS -->
 
     <section id="projects">
@@ -352,11 +393,9 @@
             <!-- PROJECT CARD -->
 
             <div class="project-card">
-
                 <div class="project-image"></div>
-
                 <div class="project-content">
-
+                    
                     <h4>Robotics Project</h4>
 
                     <p>
@@ -370,7 +409,6 @@
                     </a>
 
                 </div>
-
             </div>
 
             <!-- PROJECT CARD -->
