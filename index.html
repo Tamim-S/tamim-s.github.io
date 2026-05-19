@@ -1,29 +1,483 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tamim Portfolio</title>
-  <style>
-    body {
-      background-color: #111;
-      color: white;
-      font-family: Arial;
-      text-align: center;
-      padding-top: 100px;
-      }
-    h1 {
-      font-size: 50px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamim Saleem | Portfolio</title>
 
-    p {
-      font-size: 22px;
-    }
-  </style>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* ---------- NAVBAR ---------- */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.95);
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e293b;
+            z-index: 1000;
+        }
+
+        nav h1 {
+            color: orange;
+            font-size: 28px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        /* ---------- HERO SECTION ---------- */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 10%;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h2 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 span {
+            color: orange;
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-right: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .primary-btn {
+            background-color: orange;
+            color: black;
+        }
+
+        .primary-btn:hover {
+            opacity: 0.85;
+        }
+
+        .secondary-btn {
+            border: 2px solid orange;
+            color: orange;
+        }
+
+        .secondary-btn:hover {
+            background-color: orange;
+            color: black;
+        }
+
+        /* ---------- SECTION GENERAL ---------- */
+
+        section {
+            padding: 100px 10%;
+        }
+
+        section h3 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            color: orange;
+        }
+
+        /* ---------- ABOUT ---------- */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .about-box {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        /* ---------- PROJECTS ---------- */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: #1e293b;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            height: 200px;
+            background-color: #334155;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .project-content a {
+            color: orange;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ---------- HONORS ---------- */
+
+        .honors-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .honor-item {
+            background-color: #1e293b;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        /* ---------- CONTACT ---------- */
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            padding: 15px 25px;
+            background-color: #1e293b;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            background-color: orange;
+            color: black;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #94a3b8;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* ---------- MOBILE ---------- */
+
+        @media(max-width: 900px) {
+
+            .hero h2 {
+                font-size: 42px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+        }
+
+    </style>
+</head>
 
 <body>
-  <h1>Hello, I am Tamim!</h1>
-  <div id = "intro">
-    <p>Student interested in physics, mathematics, engineering, and programming.</p>
-  </div>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <h1>Tamim.</h1>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#honors">Honors</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>
+                Hi, I'm <span>Tamim</span>
+            </h2>
+
+            <p>
+                Student interested in physics, mathematics,
+                engineering, robotics, and software development.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" class="primary-btn">
+                    View Projects
+                </a>
+
+                <a href="#" class="secondary-btn">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h3>About Me</h3>
+
+        <div class="about-container">
+
+            <div class="about-box">
+
+                <h4>Education</h4>
+
+                <p>
+                    Placeholder
+                </p>
+
+            </div>
+
+            <div class="about-box">
+
+                <h4>Interests</h4>
+
+                <p>
+                    Physics simulations, robotics,
+                    engineering design, programming,
+                    mathematical problem solving,
+                    and scientific research.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h3>Projects</h3>
+
+        <div class="projects-grid">
+
+            <!-- PROJECT CARD -->
+
+            <div class="project-card">
+
+                <div class="project-image"></div>
+
+                <div class="project-content">
+
+                    <h4>Robotics Project</h4>
+
+                    <p>
+                        Description of robotics build,
+                        engineering process,
+                        and technologies used.
+                    </p>
+
+                    <a href="#">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT CARD -->
+
+            <div class="project-card">
+
+                <div class="project-image"></div>
+
+                <div class="project-content">
+
+                    <h4>Physics Simulation</h4>
+
+                    <p>
+                        Interactive simulation using
+                        JavaScript and physics modeling.
+                    </p>
+
+                    <a href="#">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECT CARD -->
+
+            <div class="project-card">
+
+                <div class="project-image"></div>
+
+                <div class="project-content">
+
+                    <h4>Programming Project</h4>
+
+                    <p>
+                        Software or coding project
+                        showcasing technical skills.
+                    </p>
+
+                    <a href="#">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HONORS -->
+
+    <section id="honors">
+
+        <h3>Honors & Awards</h3>
+
+        <div class="honors-list">
+
+            <div class="honor-item">
+                National Merit Scholar
+            </div>
+
+            <div class="honor-item">
+                International Qualifier - FIRST Tech Challenge (Team Voltage 385)
+            </div>
+
+            <div class="honor-item">
+                1st Place - Robotics Regional Competition
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h3>Contact</h3>
+
+        <div class="contact-links">
+
+            <a href="#">
+                GitHub - github.com/Tamim-S/tamim.github.io
+            </a>
+
+            <a href="#">
+                Email - tamimsaleem10@gmail.com
+            </a>
+
+            <a href="#">
+                Resume - Download Here
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Tamim Saleem
+
+    </footer>
 
 </body>
 </html>
